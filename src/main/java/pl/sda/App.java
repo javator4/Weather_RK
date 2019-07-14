@@ -1,6 +1,7 @@
 package pl.sda;
 
 import pl.sda.model.Current;
+import pl.sda.model.Location;
 import pl.sda.model.WeatherService;
 
 /**
@@ -17,11 +18,14 @@ public class App
         WeatherService weatherService = new WeatherService("http://api.apixu.com/v1/current.json",
                 "6dfd28dca0f6486e86581449191307");
 
-        Current current = weatherService.getCityWeather(city);
-
+        Current current = weatherService.getJSONData(city).getCityWeather();
         System.out.println("Temp w miescie " + city + ": " + current.getTemp_c() + "C");
 
-        System.out.println( "Hello World!" );
+        Location location = weatherService.getJSONData(city).getLocation();
+
+        System.out.println(location.getLat());
+        System.out.println(location.getLon());
+
 
     }
 }

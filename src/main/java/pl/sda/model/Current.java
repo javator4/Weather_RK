@@ -1,13 +1,14 @@
 package pl.sda.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Builder
 public class Current {
 
     private int last_updated_epoch;
