@@ -1,8 +1,13 @@
-package pl.sda.model;
+package pl.sda;
 
-import netscape.javascript.JSObject;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.File;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONObject;
+import pl.sda.model.Current;
+import pl.sda.model.Location;
+import pl.sda.model.Weather;
 
 import java.io.IOException;
 import java.net.URL;
@@ -24,7 +29,7 @@ public class WeatherService {
         //http://api.apixu.com/v1/current.json?key=6dfd28dca0f6486e86581449191307&q=Torun
     }
 
-    public WeatherService getJSONData(String city) {
+    public String getJSONData(String city) {
 
         if (data.isEmpty()) {
 
@@ -37,9 +42,10 @@ public class WeatherService {
                 e.printStackTrace();
             }
         }
-        return this;
+        return data;
 
     }
+
 
 
     public Location getLocation() {
