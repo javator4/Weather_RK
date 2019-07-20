@@ -27,6 +27,7 @@ public class OrgImplementation implements WeatherForecast{
                 .lat(Float.parseFloat(lat))
                 .lon(Float.parseFloat(jsonObject.getJSONObject("location").get("lon").toString()))
                 .country(jsonObject.getJSONObject("location").get("country").toString())
+                .tz_id(jsonObject.getJSONObject("location").get("tz_id").toString())
                 .build();
 
         Current current = Current.builder()
