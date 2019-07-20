@@ -1,6 +1,5 @@
 package pl.sda;
 
-
 import org.apache.log4j.Logger;
 
 public class App
@@ -44,7 +43,6 @@ public class App
         System.out.println(weatherForecast.getWeather().getCurrent().getWind_kph());
         System.out.println(weatherForecast1.getWeather().getLocation().getCountry());
         System.out.println(weatherForecast1.getWeather().getCurrent().getWind_kph());
-
 
 
 
